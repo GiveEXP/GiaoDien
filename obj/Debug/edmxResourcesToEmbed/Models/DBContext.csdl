@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UsersModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="basicUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Old" Type="Int32" />
+    <NavigationProperty Name="basicUser1" Relationship="Self.FK_basicUser_basicUser" FromRole="basicUser" ToRole="basicUser1" />
+    <NavigationProperty Name="basicUser2" Relationship="Self.FK_basicUser_basicUser" FromRole="basicUser1" ToRole="basicUser" />
+  </EntityType>
+  <Association Name="FK_basicUser_basicUser">
+    <End Role="basicUser" Type="Self.basicUser" Multiplicity="1" />
+    <End Role="basicUser1" Type="Self.basicUser" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="basicUser">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="basicUser1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UsersEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="basicUser" EntityType="Self.basicUser" />
+    <AssociationSet Name="FK_basicUser_basicUser" Association="Self.FK_basicUser_basicUser">
+      <End Role="basicUser" EntitySet="basicUser" />
+      <End Role="basicUser1" EntitySet="basicUser" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
