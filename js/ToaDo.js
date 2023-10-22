@@ -38,38 +38,38 @@
 //}
 
 
-//pannellum.viewer('panorama', {
-//    "type": "equirectangular",
-//    "panorama": "./Image/river.jpg",
-//    "autoLoad": true,
-//   /* "autoRotate": -2, // Tùy chọn quay tự động*/
-//    "hotSpots": [],  // Thêm điểm nóng (nếu cần)
+pannellum.viewer('panorama', {
+    "type": "equirectangular",
+    "panorama": "./Image/river.jpg",
+    "autoLoad": true,
+   /* "autoRotate": -2, // Tùy chọn quay tự động*/
+    "hotSpots": [],  // Thêm điểm nóng (nếu cần)
 
-//    "onContextMenu": function (mouseEvent) {
-//        // Ngăn sự kiện chuột mặc định xuất hiện
-//        // Tắt sự kiện chuột cho sự kiện mousePressed()
-//        panel.setEnable(false, MouseInputListener.MOUSE_PRESSED);
+    "onContextMenu": function (mouseEvent) {
+        // Ngăn sự kiện chuột mặc định xuất hiện
+        // Tắt sự kiện chuột cho sự kiện mousePressed()
+        panel.setEnable(false, MouseInputListener.MOUSE_PRESSED);
 
 
-//        // Lấy tọa độ pitch và yaw của điểm người dùng chuột phải
-//        var pitch = this.mouseEventToCoords(mouseEvent).pitch;
-//        var yaw = this.mouseEventToCoords(mouseEvent).yaw;
+        // Lấy tọa độ pitch và yaw của điểm người dùng chuột phải
+        var pitch = this.mouseEventToCoords(mouseEvent).pitch;
+        var yaw = this.mouseEventToCoords(mouseEvent).yaw;
 
-//        this.mouseEventToCoords = function (event) {
-//            return mouseEventToCoords(event);
+        this.mouseEventToCoords = function (event) {
+            return mouseEventToCoords(event);
 
-//        // Hiển thị tọa độ pitch và yaw trong một cửa sổ thông báo popup
-//        var message = "Pitch: " + pitch + ", Yaw: " + yaw;
-//        showPopupMessage(message);
+        // Hiển thị tọa độ pitch và yaw trong một cửa sổ thông báo popup
+        var message = "Pitch: " + pitch + ", Yaw: " + yaw;
+        showPopupMessage(message);
 
-//    }
+    }
 
-//});
+});
 
-//function showPopupMessage(message) {
-//    // Tạo và hiển thị cửa sổ thông báo popup
-//    alert(message);
-//}
+function showPopupMessage(message) {
+    // Tạo và hiển thị cửa sổ thông báo popup
+    alert(message);
+}
 
 
 
