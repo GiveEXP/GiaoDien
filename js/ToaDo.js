@@ -17,7 +17,7 @@
 //    // Tạo một phần tử div cho cửa sổ thông báo
 //    var popup = document.createElement("div");
 //    popup.innerHTML = message;
-
+///test hơi nhìu thầy coi coi đoạn nào chứ em lú cái này quá rồi ( đã xóa bớt mấy cái vì nhìn nó rất là ..)
 
 //    // Thiết lập các thuộc tính CSS cho cửa sổ thông báo
 //    popup.style.position = "fixed";
